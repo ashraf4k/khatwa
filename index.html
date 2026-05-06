@@ -6,327 +6,311 @@
 <title>منصة خطوة للتمكين الاقتصادي</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:#1a2a4a; --navy-dark:#0d1b33; --navy-light:#243659;
-  --gold:#c9952a; --gold-light:#e8b84b; --gold-pale:#fdf0d0;
-  --cream:#f8f5ef; --white:#fff; --text:#1a1a2e; --muted:#607080;
-  --radius:14px; --shadow:0 4px 24px rgba(13,27,51,.10);
+:root{
+  --navy:#1a2a4a;--navy-dark:#0d1b33;--navy-light:#243659;
+  --gold:#c9952a;--gold-l:#e8b84b;--gold-pale:#fdf0d0;
+  --cream:#f8f5ef;--white:#fff;--text:#1a1a2e;--muted:#607080;
+  --r:14px;--sh:0 4px 24px rgba(13,27,51,.10);--nav-h:68px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--text);direction:rtl;overflow-x:hidden;}
-
-/* ─── SCROLL REVEAL ─── */
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease;}
-.reveal.visible{opacity:1;transform:none;}
-.reveal-left{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease;}
-.reveal-left.visible{opacity:1;transform:none;}
-.reveal-right{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease;}
-.reveal-right.visible{opacity:1;transform:none;}
-
-/* ─── NAV ─── */
-nav{background:var(--navy-dark);position:sticky;top:0;z-index:999;box-shadow:0 2px 20px rgba(0,0,0,.4);transition:background .3s;}
-nav.scrolled{background:rgba(13,27,51,.97);backdrop-filter:blur(12px);}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
-nav img{border-radius:8px;}
-.nav-title strong{display:block;color:#fff;font-size:1rem;font-weight:700;font-family:'Cairo',sans-serif;}
-.nav-title span{color:var(--gold-light);font-size:.72rem;}
-.nav-links{display:flex;gap:0;list-style:none;}
-.nav-links a{color:rgba(255,255,255,.78);text-decoration:none;padding:0 1rem;font-size:.9rem;font-weight:500;height:68px;display:flex;align-items:center;border-bottom:3px solid transparent;transition:all .2s;}
-.nav-links a:hover{color:var(--gold-light);border-bottom-color:var(--gold-light);background:rgba(201,149,42,.07);}
-.nav-btn{background:var(--gold);color:var(--navy-dark)!important;padding:.5rem 1.4rem!important;border-radius:8px;font-weight:700!important;height:auto!important;border-bottom:none!important;margin-right:.75rem;transition:all .2s!important;}
-.nav-btn:hover{background:var(--gold-light)!important;transform:translateY(-1px)!important;box-shadow:0 4px 14px rgba(201,149,42,.4)!important;}
-
-/* ─── HERO ─── */
-.hero{background:linear-gradient(140deg,var(--navy-dark) 0%,var(--navy) 55%,var(--navy-light) 100%);min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;}
-
-/* Animated grid pattern */
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,149,42,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,149,42,.05) 1px,transparent 1px);background-size:60px 60px;animation:gridMove 20s linear infinite;}
-@keyframes gridMove{0%{background-position:0 0;}100%{background-position:60px 60px;}}
-
-/* Floating orbs */
-.orb{position:absolute;border-radius:50%;filter:blur(60px);animation:float 8s ease-in-out infinite;}
-.orb1{width:400px;height:400px;background:rgba(201,149,42,.07);top:-100px;left:-100px;animation-delay:0s;}
-.orb2{width:300px;height:300px;background:rgba(26,42,74,.4);bottom:-80px;right:5%;animation-delay:-3s;}
-.orb3{width:200px;height:200px;background:rgba(201,149,42,.05);top:40%;right:30%;animation-delay:-5s;}
-@keyframes float{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-30px) scale(1.05);}}
-
-/* Animated particles */
-.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
-.particle{position:absolute;width:3px;height:3px;background:rgba(201,149,42,.4);border-radius:50%;animation:rise linear infinite;}
-@keyframes rise{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:1;}90%{opacity:.5;}100%{transform:translateY(-100px) scale(1);opacity:0;}}
-
-.hero-inner{max-width:1200px;margin:0 auto;padding:5rem 2rem;display:grid;grid-template-columns:1fr 360px;gap:4rem;align-items:center;position:relative;z-index:1;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,149,42,.13);border:1px solid rgba(201,149,42,.35);color:var(--gold-light);padding:.38rem 1rem;border-radius:50px;font-size:.82rem;font-weight:500;margin-bottom:1.5rem;animation:fadeDown .8s ease both;}
-.hero-badge-dot{width:8px;height:8px;background:var(--gold-light);border-radius:50%;animation:blink 2s infinite;}
-@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 6px var(--gold-light);}50%{opacity:.3;box-shadow:none;}}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h);}
+body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--text);direction:rtl;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}a{text-decoration:none;}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.on{opacity:1;transform:none;}
+.rev-l{opacity:0;transform:translateX(36px);transition:opacity .65s ease,transform .65s ease;}
+.rev-l.on{opacity:1;transform:none;}
+.rev-r{opacity:0;transform:translateX(-36px);transition:opacity .65s ease,transform .65s ease;}
+.rev-r.on{opacity:1;transform:none;}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 7px var(--gold-l);}50%{opacity:.3;box-shadow:none;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:none;}}
-.hero h1{font-family:'Cairo',sans-serif;font-size:3rem;font-weight:900;color:#fff;line-height:1.28;margin-bottom:1.4rem;animation:fadeUp .9s .2s ease both;}
-.hero h1 em{color:var(--gold-light);font-style:normal;position:relative;}
-.hero h1 em::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:3px;background:linear-gradient(to right,var(--gold),transparent);border-radius:2px;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
-.hero-desc{color:rgba(255,255,255,.72);font-size:1.1rem;line-height:1.85;margin-bottom:2.4rem;max-width:500px;animation:fadeUp .9s .4s ease both;}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .9s .6s ease both;}
-.btn{display:inline-flex;align-items:center;gap:7px;padding:.82rem 1.8rem;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;cursor:pointer;border:none;font-family:'Tajawal',sans-serif;transition:all .25s;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-28px);}}
+@keyframes gridMove{to{background-position:60px 60px;}}
+@keyframes ringPulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1);}50%{opacity:0;transform:translate(-50%,-50%) scale(1.35);}}
+@keyframes rise{0%{transform:translateY(100vh);opacity:0;}10%{opacity:.8;}90%{opacity:.3;}100%{transform:translateY(-120px);opacity:0;}}
+@keyframes dotMove{to{background-position:30px 30px;}}
+@keyframes expandRing{0%{opacity:.45;transform:translate(-50%,-50%) scale(.8);}100%{opacity:0;transform:translate(-50%,-50%) scale(1.25);}}
+nav{background:var(--navy-dark);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.38);transition:background .3s,backdrop-filter .3s;}
+nav.scrolled{background:rgba(13,27,51,.96);backdrop-filter:blur(14px);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);}
+.nav-brand{display:flex;align-items:center;gap:10px;}
+.nav-brand img{height:44px;border-radius:8px;}
+.nav-title strong{display:block;color:#fff;font-size:.95rem;font-weight:700;font-family:'Cairo',sans-serif;line-height:1.2;}
+.nav-title span{color:var(--gold-l);font-size:.68rem;}
+.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.78);padding:0 .9rem;font-size:.88rem;font-weight:500;height:var(--nav-h);display:flex;align-items:center;border-bottom:3px solid transparent;transition:all .2s;}
+.nav-links a:hover{color:var(--gold-l);border-bottom-color:var(--gold-l);background:rgba(201,149,42,.07);}
+.nav-cta{background:var(--gold);color:var(--navy-dark)!important;padding:.48rem 1.3rem!important;border-radius:8px;font-weight:700!important;height:auto!important;border-bottom:none!important;margin-right:.6rem;transition:all .22s!important;}
+.nav-cta:hover{background:var(--gold-l)!important;box-shadow:0 4px 14px rgba(201,149,42,.4)!important;transform:translateY(-1px)!important;}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.07);border:1px solid rgba(201,149,42,.25);border-radius:8px;cursor:pointer;padding:8px;transition:background .2s;}
+.burger:hover{background:rgba(201,149,42,.12);}
+.burger span{display:block;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:all .3s;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{position:fixed;inset:0;z-index:998;display:flex;pointer-events:none;}
+.mobile-overlay{position:absolute;inset:0;background:rgba(0,0,0,.52);opacity:0;transition:opacity .3s;pointer-events:none;}
+.mobile-panel{position:absolute;top:0;right:0;bottom:0;width:min(300px,82vw);background:var(--navy-dark);border-left:1px solid rgba(201,149,42,.2);transform:translateX(100%);opacity:0;transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .3s;display:flex;flex-direction:column;overflow-y:auto;}
+.mobile-menu.open .mobile-overlay{opacity:1;pointer-events:all;}
+.mobile-menu.open .mobile-panel{transform:none;opacity:1;pointer-events:all;}
+.mobile-menu.open{pointer-events:all;}
+.mob-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid rgba(201,149,42,.15);}
+.mob-header img{height:36px;border-radius:6px;}
+.mob-close{width:34px;height:34px;border-radius:7px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
+.mob-close:hover{background:rgba(201,149,42,.15);border-color:rgba(201,149,42,.3);}
+.mob-close svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;}
+.mob-links{padding:.75rem 0;flex:1;}
+.mob-links a{display:flex;align-items:center;gap:10px;padding:.9rem 1.5rem;color:rgba(255,255,255,.75);font-size:.95rem;font-weight:500;border-right:3px solid transparent;transition:all .2s;}
+.mob-links a:hover{color:var(--gold-l);background:rgba(201,149,42,.07);border-right-color:var(--gold-l);}
+.mob-links a svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;flex-shrink:0;opacity:.7;}
+.mob-footer{padding:1.25rem 1.5rem;border-top:1px solid rgba(201,149,42,.15);}
+.mob-cta{display:block;text-align:center;background:var(--gold);color:var(--navy-dark);padding:.85rem;border-radius:10px;font-weight:700;font-size:.95rem;transition:background .2s;}
+.mob-cta:hover{background:var(--gold-l);}
+.hero{background:linear-gradient(140deg,var(--navy-dark) 0%,var(--navy) 55%,var(--navy-light) 100%);min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,149,42,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,149,42,.05) 1px,transparent 1px);background-size:60px 60px;animation:gridMove 22s linear infinite;}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);animation:float 9s ease-in-out infinite;pointer-events:none;}
+.orb1{width:420px;height:420px;background:rgba(201,149,42,.07);top:-120px;left:-100px;}
+.orb2{width:300px;height:300px;background:rgba(26,42,74,.45);bottom:-90px;right:5%;animation-delay:-4s;}
+.orb3{width:180px;height:180px;background:rgba(201,149,42,.05);top:40%;right:28%;animation-delay:-6s;}
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.particle{position:absolute;width:2px;height:2px;background:rgba(201,149,42,.5);border-radius:50%;animation:rise linear infinite;}
+.hero-inner{max-width:1200px;margin:0 auto;padding:5rem 1.5rem;display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:center;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,149,42,.13);border:1px solid rgba(201,149,42,.35);color:var(--gold-l);padding:.38rem 1rem;border-radius:50px;font-size:.8rem;font-weight:500;margin-bottom:1.4rem;animation:fadeDown .8s ease both;}
+.hero-badge-dot{width:8px;height:8px;background:var(--gold-l);border-radius:50%;animation:blink 2.2s infinite;}
+.hero h1{font-family:'Cairo',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.3;margin-bottom:1.3rem;animation:fadeUp .9s .2s ease both;}
+.hero h1 em{color:var(--gold-l);font-style:normal;position:relative;}
+.hero h1 em::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:3px;background:linear-gradient(to right,var(--gold),transparent);border-radius:2px;}
+.hero-desc{color:rgba(255,255,255,.72);font-size:clamp(.95rem,2vw,1.08rem);line-height:1.85;margin-bottom:2.2rem;animation:fadeUp .9s .4s ease both;}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;animation:fadeUp .9s .55s ease both;}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:.8rem 1.7rem;border-radius:10px;font-weight:700;font-size:.93rem;cursor:pointer;border:none;font-family:'Tajawal',sans-serif;transition:all .25s;}
 .btn-gold{background:var(--gold);color:var(--navy-dark);}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 8px 24px rgba(201,149,42,.4);}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-3px);box-shadow:0 8px 24px rgba(201,149,42,.4);}
 .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);}
-.btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light);background:rgba(201,149,42,.07);}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.8rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);animation:fadeUp .9s .8s ease both;}
-.stat-item{text-align:center;}
-.stat-num{font-family:'Cairo',sans-serif;font-size:2.2rem;font-weight:900;color:var(--gold-light);display:block;}
-.stat-lbl{font-size:.78rem;color:rgba(255,255,255,.55);}
-
-/* Hero Card */
-.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(201,149,42,.28);border-radius:20px;padding:2.5rem 2rem;text-align:center;animation:fadeUp 1s .5s ease both;backdrop-filter:blur(8px);position:relative;overflow:hidden;}
-.hero-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,149,42,.08),transparent 60%);pointer-events:none;}
-.hero-logo-slot{width:180px;height:180px;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;}
-.hero-logo-slot img{border-radius:12px;width:180px;height:auto;}
-.hero-card-name{color:#fff;font-size:1rem;font-weight:700;font-family:'Cairo',sans-serif;margin-bottom:.3rem;}
-.hero-card-sub{color:var(--gold-light);font-size:.82rem;}
-.hero-card-loc{display:flex;align-items:center;justify-content:center;gap:5px;color:rgba(255,255,255,.42);font-size:.78rem;margin-top:.9rem;}
-.hero-card-sep{height:1px;background:rgba(201,149,42,.18);margin:1.2rem 0;}
-.hero-info-row{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:.5rem;}
-.hero-info-row svg{width:14px;height:14px;opacity:.7;flex-shrink:0;}
-.hero-info-row span{color:var(--gold-light);font-weight:600;}
-
-/* ─── WAVE DIVIDER ─── */
-.wave-divider{line-height:0;overflow:hidden;}
-.wave-divider svg{display:block;width:100%;}
-
-/* ─── SECTIONS ─── */
-section{padding:5rem 2rem;}
-.section-white{background:#fff;}
-.section-cream{background:var(--cream);}
-.sec-head{text-align:center;margin-bottom:3.5rem;}
-.sec-tag{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:.8rem;font-weight:700;padding:.3rem .9rem;border-radius:50px;margin-bottom:1rem;border:1px solid rgba(201,149,42,.3);}
-.sec-head h2{font-family:'Cairo',sans-serif;font-size:2.1rem;font-weight:900;color:var(--navy);margin-bottom:.7rem;}
-.sec-head p{color:var(--muted);font-size:1rem;max-width:560px;margin:0 auto;line-height:1.8;}
-
-/* ─── SVG ICON BOXES ─── */
-.icon-box{width:56px;height:56px;border-radius:14px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;transition:all .3s;}
-.icon-box svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s;}
-
-/* ─── SERVICES ─── */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
-.srv-card{background:#fff;border-radius:var(--radius);padding:2rem 1.5rem;border:1px solid rgba(201,149,42,.15);box-shadow:var(--shadow);transition:all .3s;position:relative;overflow:hidden;}
-.srv-card::before{content:'';position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(to left,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:right;transition:transform .35s;}
-.srv-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(13,27,51,.14);}
+.btn-ghost:hover{border-color:var(--gold-l);color:var(--gold-l);background:rgba(201,149,42,.07);}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:2.5rem;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.1);animation:fadeUp .9s .7s ease both;}
+.stat-num{font-family:'Cairo',sans-serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:900;color:var(--gold-l);display:block;}
+.stat-lbl{font-size:.75rem;color:rgba(255,255,255,.52);}
+.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(201,149,42,.28);border-radius:20px;padding:2.2rem 1.8rem;text-align:center;animation:fadeUp 1s .5s ease both;backdrop-filter:blur(10px);position:relative;overflow:hidden;}
+.hero-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,149,42,.09),transparent 60%);pointer-events:none;}
+.hero-logo-slot{width:160px;height:160px;margin:0 auto 1.3rem;display:flex;align-items:center;justify-content:center;}
+.hero-logo-slot img{border-radius:12px;width:160px;height:auto;}
+.hero-card-name{color:#fff;font-size:.95rem;font-weight:700;font-family:'Cairo',sans-serif;margin-bottom:.3rem;}
+.hero-card-sub{color:var(--gold-l);font-size:.78rem;}
+.hero-card-loc{display:flex;align-items:center;justify-content:center;gap:5px;color:rgba(255,255,255,.4);font-size:.75rem;margin-top:.8rem;}
+.hero-card-sep{height:1px;background:rgba(201,149,42,.18);margin:1rem 0;}
+.hero-info-row{display:flex;align-items:center;gap:8px;font-size:.8rem;color:rgba(255,255,255,.6);margin-bottom:.45rem;}
+.hero-info-row svg{width:13px;height:13px;opacity:.65;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:1.8;}
+.hero-info-row span{color:var(--gold-l);font-weight:600;}
+.wave{line-height:0;overflow:hidden;}.wave svg{display:block;width:100%;}
+section{padding:clamp(3rem,6vw,5rem) 1.5rem;}
+.section-white{background:#fff;}.section-cream{background:var(--cream);}
+.container{max-width:1200px;margin:0 auto;}
+.sec-head{text-align:center;margin-bottom:3rem;}
+.sec-tag{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:.78rem;font-weight:700;padding:.28rem .9rem;border-radius:50px;margin-bottom:.9rem;border:1px solid rgba(201,149,42,.3);}
+.sec-head h2{font-family:'Cairo',sans-serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:900;color:var(--navy);margin-bottom:.65rem;}
+.sec-head p{color:var(--muted);font-size:.95rem;max-width:540px;margin:0 auto;line-height:1.8;}
+.icon-box{width:52px;height:52px;border-radius:13px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;transition:all .3s;flex-shrink:0;}
+.icon-box svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:all .3s;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.25rem;}
+.srv-card{background:#fff;border-radius:var(--r);padding:1.75rem 1.4rem;border:1px solid rgba(201,149,42,.14);box-shadow:var(--sh);transition:all .3s;position:relative;overflow:hidden;}
+.srv-card::before{content:'';position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(to left,var(--gold),var(--gold-l));transform:scaleX(0);transform-origin:right;transition:transform .35s;}
+.srv-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(13,27,51,.13);}
 .srv-card:hover::before{transform:scaleX(1);}
-.srv-card:hover .icon-box{background:var(--navy);transform:rotate(-5deg);}
-.srv-card:hover .icon-box svg{stroke:var(--gold-light);transform:scale(1.1);}
-.srv-card h3{font-family:'Cairo',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.6rem;}
-.srv-card p{color:var(--muted);font-size:.88rem;line-height:1.75;}
-.srv-link{display:inline-flex;align-items:center;gap:5px;color:var(--gold);font-size:.85rem;font-weight:600;margin-top:1rem;text-decoration:none;transition:gap .2s;}
+.srv-card:hover .icon-box{background:var(--navy);}
+.srv-card:hover .icon-box svg{stroke:var(--gold-l);}
+.srv-card h3{font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.55rem;}
+.srv-card p{color:var(--muted);font-size:.86rem;line-height:1.75;}
+.srv-link{display:inline-flex;align-items:center;gap:4px;color:var(--gold);font-size:.83rem;font-weight:600;margin-top:.9rem;transition:gap .2s,color .2s;}
 .srv-link:hover{color:var(--navy);gap:8px;}
-
-/* ─── HOW IT WORKS ─── */
-.steps-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;position:relative;}
-.steps-wrap::before{content:'';position:absolute;top:40px;right:10%;left:10%;height:2px;background:linear-gradient(to left,var(--gold),var(--gold-light));opacity:.2;}
+.steps-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:2rem;position:relative;}
+.steps-line{position:absolute;top:40px;right:10%;left:10%;height:2px;background:linear-gradient(to left,var(--gold),var(--gold-l));opacity:.18;}
 .step-item{text-align:center;position:relative;z-index:1;}
-.step-num{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--navy-dark),var(--navy));border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-family:'Cairo',sans-serif;font-size:1.6rem;font-weight:900;color:var(--gold-light);box-shadow:0 4px 20px rgba(13,27,51,.2);transition:all .3s;position:relative;}
-.step-num::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(201,149,42,.2);animation:ringPulse 2.5s ease-in-out infinite;}
-.step-item:nth-child(2) .step-num::after{animation-delay:.5s;}
-.step-item:nth-child(3) .step-num::after{animation-delay:1s;}
-.step-item:nth-child(4) .step-num::after{animation-delay:1.5s;}
-@keyframes ringPulse{0%,100%{opacity:.6;transform:scale(1);}50%{opacity:0;transform:scale(1.3);}}
+.step-num{width:78px;height:78px;border-radius:50%;margin:0 auto 1.1rem;background:linear-gradient(135deg,var(--navy-dark),var(--navy));border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cairo',sans-serif;font-size:1.5rem;font-weight:900;color:var(--gold-l);box-shadow:0 4px 18px rgba(13,27,51,.2);transition:all .3s;position:relative;}
+.step-num::after{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(201,149,42,.2);animation:ringPulse 2.8s ease-in-out infinite;}
+.step-item:nth-child(2) .step-num::after{animation-delay:.55s;}
+.step-item:nth-child(3) .step-num::after{animation-delay:1.1s;}
+.step-item:nth-child(4) .step-num::after{animation-delay:1.65s;}
 .step-item:hover .step-num{background:var(--gold);color:var(--navy-dark);transform:scale(1.08);}
-.step-item h3{font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem;}
-.step-item p{color:var(--muted);font-size:.83rem;line-height:1.7;}
-
-/* ─── COURSES ─── */
-.tabs{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;}
-.tab-btn{padding:.5rem 1.3rem;border-radius:50px;border:1.5px solid rgba(201,149,42,.3);background:#fff;color:var(--muted);font-size:.85rem;font-weight:600;cursor:pointer;font-family:'Tajawal',sans-serif;transition:all .2s;}
+.step-item h3{font-family:'Cairo',sans-serif;font-size:.98rem;font-weight:700;color:var(--navy);margin-bottom:.45rem;}
+.step-item p{color:var(--muted);font-size:.82rem;line-height:1.7;}
+.tabs{display:flex;gap:.45rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.2rem;}
+.tab-btn{padding:.45rem 1.1rem;border-radius:50px;border:1.5px solid rgba(201,149,42,.28);background:#fff;color:var(--muted);font-size:.83rem;font-weight:600;cursor:pointer;font-family:'Tajawal',sans-serif;transition:all .2s;}
 .tab-btn.active,.tab-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
-.courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
-.course-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(201,149,42,.15);box-shadow:var(--shadow);transition:all .3s;}
-.course-card:hover{transform:translateY(-5px);box-shadow:0 16px 44px rgba(13,27,51,.13);}
-.course-thumb{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.course-thumb svg{width:56px;height:56px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:1.4;transition:transform .4s;}
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1.3rem;}
+.course-card{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid rgba(201,149,42,.14);box-shadow:var(--sh);transition:all .3s;}
+.course-card:hover{transform:translateY(-5px);box-shadow:0 18px 46px rgba(13,27,51,.12);}
+.course-thumb{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.course-thumb svg{width:52px;height:52px;stroke:rgba(255,255,255,.45);fill:none;stroke-width:1.4;transition:transform .4s;}
 .course-card:hover .course-thumb svg{transform:scale(1.15) rotate(5deg);}
-.course-thumb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(201,149,42,.12),transparent 70%);}
+.course-thumb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(201,149,42,.1),transparent 70%);}
 .c1{background:linear-gradient(135deg,#0d1b33,#243659);}
 .c2{background:linear-gradient(135deg,#1a3a1a,#2d5a2d);}
 .c3{background:linear-gradient(135deg,#3a1a0d,#5a2d10);}
 .c4{background:linear-gradient(135deg,#1a0d3a,#2d1a5a);}
 .c5{background:linear-gradient(135deg,#0d2a3a,#1a4a5a);}
 .c6{background:linear-gradient(135deg,#2a1a0d,#4a2d10);}
-.course-badge{position:absolute;top:12px;right:12px;background:rgba(201,149,42,.92);color:var(--navy-dark);font-size:.7rem;font-weight:700;padding:.25rem .65rem;border-radius:50px;z-index:1;}
-.course-body{padding:1.4rem;}
-.course-cat{font-size:.72rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem;}
-.course-body h3{font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem;line-height:1.4;}
-.course-body p{color:var(--muted);font-size:.83rem;line-height:1.65;margin-bottom:1rem;}
-.course-meta{display:flex;align-items:center;justify-content:space-between;}
-.course-dur{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:5px;}
-.course-dur svg{width:13px;height:13px;stroke:var(--muted);}
-.btn-enroll{background:var(--navy);color:#fff;padding:.45rem 1rem;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;transition:all .2s;}
+.course-badge{position:absolute;top:10px;right:10px;background:rgba(201,149,42,.92);color:var(--navy-dark);font-size:.68rem;font-weight:700;padding:.22rem .6rem;border-radius:50px;z-index:1;}
+.course-body{padding:1.25rem;}
+.course-cat{font-size:.7rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.35rem;}
+.course-body h3{font-family:'Cairo',sans-serif;font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.45rem;line-height:1.4;}
+.course-body p{color:var(--muted);font-size:.81rem;line-height:1.65;margin-bottom:.9rem;}
+.course-meta{display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap;}
+.course-dur{font-size:.76rem;color:var(--muted);display:flex;align-items:center;gap:4px;}
+.course-dur svg{width:12px;height:12px;stroke:var(--muted);fill:none;stroke-width:2;flex-shrink:0;}
+.btn-enroll{background:var(--navy);color:#fff;padding:.42rem .95rem;border-radius:8px;font-size:.8rem;font-weight:600;transition:all .2s;white-space:nowrap;}
 .btn-enroll:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-1px);}
-
-/* ─── CONSULT ─── */
-.consult-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
-.consult-visual{background:linear-gradient(135deg,var(--navy-dark),var(--navy));border-radius:20px;padding:3rem 2rem;border:1px solid rgba(201,149,42,.2);position:relative;overflow:hidden;min-height:400px;display:flex;flex-direction:column;justify-content:center;}
+.consult-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
+.consult-visual{background:linear-gradient(135deg,var(--navy-dark),var(--navy));border-radius:20px;padding:2.5rem 2rem;border:1px solid rgba(201,149,42,.2);position:relative;overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:center;}
 .consult-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(201,149,42,.1),transparent 60%);}
-/* animated rings in consult */
-.consult-rings{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
-.c-ring{position:absolute;border-radius:50%;border:1px solid rgba(201,149,42,.15);transform:translate(-50%,-50%);animation:expandRing 3s ease-in-out infinite;}
-.c-ring:nth-child(1){width:120px;height:120px;animation-delay:0s;}
-.c-ring:nth-child(2){width:200px;height:200px;animation-delay:.5s;}
-.c-ring:nth-child(3){width:300px;height:300px;animation-delay:1s;}
-@keyframes expandRing{0%{opacity:.5;transform:translate(-50%,-50%) scale(.8);}100%{opacity:0;transform:translate(-50%,-50%) scale(1.2);}}
-.consult-icon-svg{position:relative;z-index:1;display:flex;justify-content:center;margin-bottom:1.5rem;}
-.consult-icon-svg svg{width:64px;height:64px;stroke:var(--gold-light);fill:none;stroke-width:1.4;}
-.consult-visual h3{font-family:'Cairo',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:.7rem;position:relative;z-index:1;text-align:center;}
-.consult-visual p{color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.75;position:relative;z-index:1;text-align:center;}
-.consult-checks{margin-top:1.5rem;display:flex;flex-direction:column;gap:.65rem;position:relative;z-index:1;}
-.consult-check{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);font-size:.85rem;}
-.check-icon{width:20px;height:20px;border-radius:50%;background:rgba(201,149,42,.2);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.check-icon svg{width:11px;height:11px;stroke:var(--gold-light);fill:none;stroke-width:2.5;}
-.consult-form-area h2{font-family:'Cairo',sans-serif;font-size:1.8rem;font-weight:900;color:var(--navy);margin-bottom:.6rem;}
-.consult-form-area .sub{color:var(--muted);font-size:.9rem;margin-bottom:2rem;line-height:1.7;}
-.form-group{margin-bottom:1.2rem;}
-.form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:.4rem;}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:.75rem 1rem;border:1.5px solid rgba(201,149,42,.25);border-radius:10px;font-size:.9rem;font-family:'Tajawal',sans-serif;background:#fff;color:var(--text);outline:none;transition:border .2s,box-shadow .2s;direction:rtl;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,149,42,.12);}
-.form-group textarea{resize:vertical;min-height:100px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-
-/* ─── STORIES ─── */
-.stories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
-.story-card{background:#fff;border-radius:var(--radius);padding:2rem;border:1px solid rgba(201,149,42,.15);box-shadow:var(--shadow);position:relative;transition:all .3s;overflow:hidden;}
-.story-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.consult-rings{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.c-ring{position:absolute;border-radius:50%;border:1px solid rgba(201,149,42,.15);transform:translate(-50%,-50%);animation:expandRing 3.2s ease-in-out infinite;}
+.c-ring:nth-child(1){width:110px;height:110px;}
+.c-ring:nth-child(2){width:190px;height:190px;animation-delay:.55s;}
+.c-ring:nth-child(3){width:290px;height:290px;animation-delay:1.1s;}
+.consult-icon-svg{position:relative;z-index:1;display:flex;justify-content:center;margin-bottom:1.3rem;}
+.consult-icon-svg svg{width:60px;height:60px;stroke:var(--gold-l);fill:none;stroke-width:1.4;}
+.consult-visual h3{font-family:'Cairo',sans-serif;font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:.65rem;position:relative;z-index:1;text-align:center;}
+.consult-visual p{color:rgba(255,255,255,.58);font-size:.88rem;line-height:1.75;position:relative;z-index:1;text-align:center;}
+.consult-checks{margin-top:1.4rem;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1;}
+.cc{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.72);font-size:.84rem;}
+.cc-dot{width:20px;height:20px;border-radius:50%;background:rgba(201,149,42,.18);border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cc-dot svg{width:11px;height:11px;stroke:var(--gold-l);fill:none;stroke-width:2.5;}
+.consult-form-area h2{font-family:'Cairo',sans-serif;font-size:1.7rem;font-weight:900;color:var(--navy);margin-bottom:.55rem;}
+.sub{color:var(--muted);font-size:.88rem;margin-bottom:1.8rem;line-height:1.7;}
+.fg{margin-bottom:1.1rem;}
+.fg label{display:block;font-size:.83rem;font-weight:600;color:var(--navy);margin-bottom:.38rem;}
+.fg input,.fg select,.fg textarea{width:100%;padding:.72rem 1rem;border:1.5px solid rgba(201,149,42,.24);border-radius:10px;font-size:.88rem;font-family:'Tajawal',sans-serif;background:#fff;color:var(--text);outline:none;transition:border .2s,box-shadow .2s;direction:rtl;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,149,42,.11);}
+.fg textarea{resize:vertical;min-height:95px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
+.stories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1.3rem;}
+.story-card{background:#fff;border-radius:var(--r);padding:1.8rem;border:1px solid rgba(201,149,42,.14);box-shadow:var(--sh);position:relative;transition:all .3s;overflow:hidden;}
+.story-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--gold),var(--gold-l));transform:scaleX(0);transform-origin:left;transition:transform .35s;}
 .story-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,27,51,.12);}
-.story-card:hover::before{transform:scaleX(1);}
-.quote-icon{position:absolute;top:1.2rem;left:1.5rem;opacity:.12;}
-.quote-icon svg{width:44px;height:44px;fill:var(--gold);}
-.stars{display:flex;gap:3px;margin-bottom:.8rem;}
-.star-svg{width:14px;height:14px;fill:var(--gold);}
-.story-result{display:inline-flex;align-items:center;gap:6px;background:var(--gold-pale);color:var(--gold);border-radius:50px;font-size:.75rem;font-weight:700;padding:.25rem .75rem;margin-bottom:1rem;border:1px solid rgba(201,149,42,.2);}
-.story-result svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;}
-.story-text{color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:1.4rem;padding-top:.8rem;}
-.story-person{display:flex;align-items:center;gap:12px;}
-.story-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--navy-dark),var(--navy-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;border:2px solid var(--gold);}
-.story-avatar svg{width:22px;height:22px;stroke:var(--gold-light);fill:none;stroke-width:1.6;}
-.story-name{font-weight:700;font-size:.9rem;color:var(--navy);}
-.story-role{font-size:.78rem;color:var(--gold);}
-
-/* ─── MARKET ─── */
-.market-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;}
-.market-card{background:#fff;border-radius:var(--radius);padding:1.8rem 1.5rem;border:1px solid rgba(201,149,42,.15);box-shadow:var(--shadow);text-align:center;transition:all .3s;position:relative;overflow:hidden;}
-.market-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,27,51,0),rgba(201,149,42,.04));opacity:0;transition:opacity .3s;}
-.market-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,27,51,.12);}
-.market-card:hover::after{opacity:1;}
-.market-card:hover .market-icon-box{background:var(--navy);}
-.market-card:hover .market-icon-box svg{stroke:var(--gold-light);}
-.market-icon-box{width:60px;height:60px;border-radius:16px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin:0 auto .9rem;transition:all .3s;}
-.market-icon-box svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.6;transition:all .3s;}
-.market-card h4{font-family:'Cairo',sans-serif;font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;}
-.market-card p{color:var(--muted);font-size:.82rem;line-height:1.65;}
-.market-tag{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:50px;margin-top:.6rem;border:1px solid rgba(201,149,42,.2);}
-
-/* ─── PARTNERS ─── */
-.partners-bar{background:var(--navy-dark);padding:3rem 2rem;border-top:3px solid rgba(201,149,42,.2);border-bottom:3px solid rgba(201,149,42,.2);position:relative;overflow:hidden;}
+.story-card:hover::after{transform:scaleX(1);}
+.quote-icon{position:absolute;top:1rem;left:1.3rem;opacity:.1;}
+.quote-icon svg{width:40px;height:40px;fill:var(--gold);}
+.stars{display:flex;gap:3px;margin-bottom:.7rem;}
+.star-svg{width:13px;height:13px;fill:var(--gold);}
+.story-result{display:inline-flex;align-items:center;gap:6px;background:var(--gold-pale);color:var(--gold);border-radius:50px;font-size:.73rem;font-weight:700;padding:.22rem .7rem;margin-bottom:.9rem;border:1px solid rgba(201,149,42,.2);}
+.story-result svg{width:12px;height:12px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0;}
+.story-text{color:var(--muted);font-size:.88rem;line-height:1.8;margin-bottom:1.2rem;padding-top:.6rem;}
+.story-person{display:flex;align-items:center;gap:11px;}
+.story-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--navy-dark),var(--navy-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;border:2px solid var(--gold);}
+.story-avatar svg{width:20px;height:20px;stroke:var(--gold-l);fill:none;stroke-width:1.6;}
+.story-name{font-weight:700;font-size:.88rem;color:var(--navy);}
+.story-role{font-size:.76rem;color:var(--gold);}
+.market-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1.1rem;}
+.market-card{background:#fff;border-radius:var(--r);padding:1.6rem 1.3rem;border:1px solid rgba(201,149,42,.14);box-shadow:var(--sh);text-align:center;transition:all .3s;}
+.market-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 14px 34px rgba(13,27,51,.11);}
+.market-card:hover .mib{background:var(--navy);}
+.market-card:hover .mib svg{stroke:var(--gold-l);}
+.mib{width:56px;height:56px;border-radius:14px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin:0 auto .85rem;transition:all .3s;}
+.mib svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.6;transition:all .3s;}
+.market-card h4{font-family:'Cairo',sans-serif;font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:.35rem;}
+.market-card p{color:var(--muted);font-size:.8rem;line-height:1.65;}
+.market-tag{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:.68rem;font-weight:700;padding:.18rem .6rem;border-radius:50px;margin-top:.55rem;border:1px solid rgba(201,149,42,.2);}
+.partners-bar{background:var(--navy-dark);padding:2.5rem 1.5rem;border-top:3px solid rgba(201,149,42,.2);border-bottom:3px solid rgba(201,149,42,.2);position:relative;overflow:hidden;}
 .partners-bar::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,149,42,.04),transparent 70%);}
-.partners-bar h3{text-align:center;color:rgba(255,255,255,.5);font-size:.82rem;font-weight:500;margin-bottom:1.8rem;letter-spacing:.12em;text-transform:uppercase;position:relative;}
-.partners-logos{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;position:relative;}
-.partner-item{background:rgba(255,255,255,.05);border:1px solid rgba(201,149,42,.2);border-radius:10px;padding:.8rem 1.5rem;color:rgba(255,255,255,.45);font-size:.85rem;font-weight:600;transition:all .3s;cursor:default;}
-.partner-item:hover{background:rgba(201,149,42,.1);color:var(--gold-light);border-color:rgba(201,149,42,.4);transform:translateY(-2px);}
-
-/* ─── ABOUT ─── */
-.about-strip{background:#fff;padding:4rem 2rem;border-bottom:1px solid rgba(201,149,42,.12);}
-.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-.about-text h2{font-family:'Cairo',sans-serif;font-size:2rem;font-weight:900;color:var(--navy);margin-bottom:1rem;}
-.about-text p{color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:1rem;}
-.about-values{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.4rem;}
+.partners-bar h3{text-align:center;color:rgba(255,255,255,.48);font-size:.78rem;font-weight:500;margin-bottom:1.5rem;letter-spacing:.12em;text-transform:uppercase;position:relative;}
+.partners-logos{display:flex;align-items:center;justify-content:center;gap:1.1rem;flex-wrap:wrap;position:relative;}
+.partner-item{background:rgba(255,255,255,.05);border:1px solid rgba(201,149,42,.2);border-radius:9px;padding:.7rem 1.3rem;color:rgba(255,255,255,.42);font-size:.82rem;font-weight:600;transition:all .3s;cursor:default;}
+.partner-item:hover{background:rgba(201,149,42,.1);color:var(--gold-l);border-color:rgba(201,149,42,.38);transform:translateY(-2px);}
+.about-strip{background:#fff;padding:clamp(3rem,6vw,4.5rem) 1.5rem;border-bottom:1px solid rgba(201,149,42,.12);}
+.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+.about-text h2{font-family:'Cairo',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:var(--navy);margin-bottom:.9rem;}
+.about-text p{color:var(--muted);font-size:.93rem;line-height:1.85;margin-bottom:.9rem;}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.3rem;}
 .val-item{display:flex;align-items:flex-start;gap:8px;}
-.val-dot{width:20px;height:20px;border-radius:50%;background:var(--gold-pale);border:2px solid var(--gold);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:transform .3s;}
-.val-item:hover .val-dot{transform:scale(1.2);}
-.val-dot::after{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);}
-.val-text{font-size:.85rem;color:var(--muted);line-height:1.6;}
-.about-logo-area{border-radius:20px;background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:3rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:320px;border:1px solid rgba(201,149,42,.2);position:relative;overflow:hidden;}
+.val-dot{width:18px;height:18px;border-radius:50%;background:var(--gold-pale);border:2px solid var(--gold);flex-shrink:0;margin-top:3px;display:flex;align-items:center;justify-content:center;transition:transform .3s;}
+.val-item:hover .val-dot{transform:scale(1.25);}
+.val-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.val-text{font-size:.83rem;color:var(--muted);line-height:1.6;}
+.about-logo-area{border-radius:20px;background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;border:1px solid rgba(201,149,42,.2);position:relative;overflow:hidden;}
 .about-logo-area::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(201,149,42,.07),transparent 65%);}
-.about-logo-slot{margin-bottom:1.5rem;position:relative;z-index:1;}
-.about-logo-slot img{border-radius:12px;width:200px;height:auto;}
-.about-name{color:#fff;font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;text-align:center;position:relative;z-index:1;}
-.about-en{color:var(--gold-light);font-size:.8rem;text-align:center;margin-top:.3rem;position:relative;z-index:1;}
-
-/* ─── REGISTER ─── */
-.register-section{background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;}
-.register-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,149,42,.06) 1px,transparent 1px);background-size:30px 30px;animation:dotMove 15s linear infinite;}
-@keyframes dotMove{0%{background-position:0 0;}100%{background-position:30px 30px;}}
-.reg-glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(201,149,42,.1),transparent 70%);pointer-events:none;}
-.register-section h2{font-family:'Cairo',sans-serif;font-size:2.4rem;font-weight:900;color:#fff;margin-bottom:.8rem;position:relative;}
-.register-section p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:500px;margin:0 auto 2.5rem;line-height:1.8;position:relative;}
-.register-form{max-width:560px;margin:0 auto;position:relative;}
-.reg-row{display:flex;gap:.75rem;}
-.reg-row input{flex:1;padding:.85rem 1.1rem;border:1.5px solid rgba(201,149,42,.35);border-radius:10px;font-size:.9rem;font-family:'Tajawal',sans-serif;background:rgba(255,255,255,.08);color:#fff;outline:none;transition:border .2s,background .2s;direction:rtl;}
-.reg-row input::placeholder{color:rgba(255,255,255,.38);}
-.reg-row input:focus{border-color:var(--gold-light);background:rgba(255,255,255,.12);}
-
-/* ─── FOOTER ─── */
-footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:4rem 2rem 2rem;}
+.about-logo-slot{margin-bottom:1.3rem;position:relative;z-index:1;}
+.about-logo-slot img{border-radius:12px;width:180px;height:auto;}
+.about-name{color:#fff;font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;text-align:center;position:relative;z-index:1;}
+.about-en{color:var(--gold-l);font-size:.77rem;text-align:center;margin-top:.28rem;position:relative;z-index:1;}
+.register-section{background:linear-gradient(135deg,var(--navy-dark),var(--navy));padding:clamp(3.5rem,7vw,5rem) 1.5rem;text-align:center;position:relative;overflow:hidden;}
+.register-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,149,42,.055) 1px,transparent 1px);background-size:28px 28px;animation:dotMove 14s linear infinite;}
+.reg-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:480px;height:280px;background:radial-gradient(ellipse,rgba(201,149,42,.1),transparent 70%);pointer-events:none;}
+.register-section h2{font-family:'Cairo',sans-serif;font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:900;color:#fff;margin-bottom:.75rem;position:relative;}
+.register-section p{color:rgba(255,255,255,.68);font-size:clamp(.9rem,2vw,1.02rem);max-width:480px;margin:0 auto 2.2rem;line-height:1.8;position:relative;}
+.register-form{max-width:540px;margin:0 auto;position:relative;}
+.reg-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem;}
+.reg-row input{width:100%;padding:.82rem 1rem;border:1.5px solid rgba(201,149,42,.34);border-radius:10px;font-size:.88rem;font-family:'Tajawal',sans-serif;background:rgba(255,255,255,.09);color:#fff;outline:none;transition:border .2s,background .2s;direction:rtl;}
+.reg-row input::placeholder{color:rgba(255,255,255,.36);}
+.reg-row input:focus{border-color:var(--gold-l);background:rgba(255,255,255,.13);}
+footer{background:var(--navy-dark);color:rgba(255,255,255,.6);padding:clamp(3rem,5vw,4rem) 1.5rem 1.8rem;}
 .footer-inner{max-width:1200px;margin:0 auto;}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
 footer img{border-radius:8px;}
-.footer-brand img{height:60px;margin-bottom:1rem;}
-.footer-desc{font-size:.85rem;line-height:1.8;margin-bottom:1.2rem;}
-.footer-social{display:flex;gap:.6rem;}
-.social-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(201,149,42,.25);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;transition:all .25s;}
-.social-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;}
+.footer-brand img{height:55px;margin-bottom:1rem;}
+.footer-desc{font-size:.83rem;line-height:1.8;margin-bottom:1.1rem;}
+.footer-social{display:flex;gap:.55rem;}
+.social-btn{width:34px;height:34px;border-radius:8px;border:1px solid rgba(201,149,42,.24);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.48);transition:all .25s;}
+.social-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;}
 .social-btn:hover{background:var(--gold);color:var(--navy-dark);border-color:var(--gold);transform:translateY(-2px);}
 .social-btn:hover svg{stroke:var(--navy-dark);}
-.footer-col h4{color:#fff;font-size:.92rem;font-weight:700;margin-bottom:1rem;font-family:'Cairo',sans-serif;}
+.footer-col h4{color:#fff;font-size:.9rem;font-weight:700;margin-bottom:.9rem;font-family:'Cairo',sans-serif;}
 .footer-col ul{list-style:none;}
-.footer-col ul li{margin-bottom:.55rem;}
-.footer-col ul li a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:color .2s;display:flex;align-items:center;gap:5px;}
+.footer-col ul li{margin-bottom:.5rem;}
+.footer-col ul li a{color:rgba(255,255,255,.48);font-size:.83rem;transition:color .2s;display:inline-flex;align-items:center;gap:5px;}
 .footer-col ul li a::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0;transition:opacity .2s;flex-shrink:0;}
-.footer-col ul li a:hover{color:var(--gold-light);}
+.footer-col ul li a:hover{color:var(--gold-l);}
 .footer-col ul li a:hover::before{opacity:1;}
-.footer-contact-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:.65rem;font-size:.83rem;}
-.footer-contact-item svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;opacity:.55;stroke:currentColor;fill:none;stroke-width:1.8;}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
-.footer-bottom p{font-size:.8rem;}
-.footer-bottom-links{display:flex;gap:1.5rem;}
-.footer-bottom-links a{color:rgba(255,255,255,.38);text-decoration:none;font-size:.78rem;transition:color .2s;}
-.footer-bottom-links a:hover{color:var(--gold-light);}
-.gold-line{color:var(--gold-light);}
-
-/* ─── UTILS ─── */
-.container{max-width:1200px;margin:0 auto;}
-.text-center{text-align:center;}
-.mt-2{margin-top:2rem;}
-
-/* ─── RESPONSIVE ─── */
+.fci{display:flex;align-items:flex-start;gap:8px;margin-bottom:.6rem;font-size:.81rem;}
+.fci svg{width:14px;height:14px;flex-shrink:0;margin-top:2px;opacity:.5;stroke:currentColor;fill:none;stroke-width:1.8;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.9rem;}
+.footer-bottom p{font-size:.78rem;}
+.fbl{display:flex;gap:1.3rem;}
+.fbl a{color:rgba(255,255,255,.36);font-size:.76rem;transition:color .2s;}
+.fbl a:hover{color:var(--gold-l);}
+.gold-line{color:var(--gold-l);}
+.mt-2{margin-top:2rem;}.text-center{text-align:center;}
+#btt{position:fixed;bottom:1.5rem;left:1.5rem;z-index:900;width:42px;height:42px;border-radius:10px;background:var(--gold);color:var(--navy-dark);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 14px rgba(201,149,42,.4);opacity:0;pointer-events:none;transition:all .3s;}
+#btt.show{opacity:1;pointer-events:all;}
+#btt:hover{background:var(--gold-l);transform:translateY(-3px);}
+#btt svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;}
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;}
+  .nav-links{display:none;}.burger{display:flex;}
+  .hero-inner{grid-template-columns:1fr;text-align:center;padding:4rem 1.5rem 3.5rem;}
   .hero-card{display:none;}
-  .hero h1{font-size:2.2rem;}
+  .hero-desc{margin-left:auto;margin-right:auto;}
+  .hero-btns{justify-content:center;}
   .consult-wrap{grid-template-columns:1fr;}
   .consult-visual{display:none;}
   .about-inner{grid-template-columns:1fr;}
+  .about-logo-area{order:-1;}
   .footer-grid{grid-template-columns:1fr 1fr;}
-  .nav-links{display:none;}
-  .steps-wrap::before{display:none;}
+  .steps-line{display:none;}
 }
-@media(max-width:560px){
-  .hero h1{font-size:1.8rem;}
-  .form-row{grid-template-columns:1fr;}
-  .reg-row{flex-direction:column;}
-  .footer-grid{grid-template-columns:1fr;}
+@media(max-width:600px){
+  :root{--nav-h:60px;}
+  .nav-brand img{height:38px;}.nav-title strong{font-size:.85rem;}.nav-title span{display:none;}
+  .hero h1{font-size:clamp(1.65rem,7vw,2.2rem);}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:.5rem;}
+  .stat-num{font-size:1.5rem;}.stat-lbl{font-size:.68rem;}
+  .form-row{grid-template-columns:1fr;}.reg-row{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}.about-values{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
+  .services-grid{grid-template-columns:1fr;}
+  .courses-grid{grid-template-columns:1fr;}
+  .stories-grid{grid-template-columns:1fr;}
+  .market-grid{grid-template-columns:1fr 1fr;}
+  section{padding:2.5rem 1.25rem;}
 }
+@media(max-width:380px){.market-grid{grid-template-columns:1fr;}.hero-badge{font-size:.72rem;}}
 </style>
 </head>
 <body>
-
-<!-- ══ NAV ══ -->
 <nav id="main-nav">
   <div class="nav-inner">
     <a href="#" class="nav-brand">
-      <img src="Logo.png" height="48" alt="شعار خطوة">
-      <div class="nav-title">
-        <strong>خطوة للتمكين الاقتصادي</strong>
-        <span>Khotwa for Economic Empowerment</span>
-      </div>
+      <img src="Logo.png" height="44" alt="شعار خطوة">
+      <div class="nav-title"><strong>خطوة للتمكين الاقتصادي</strong><span>Khotwa for Economic Empowerment</span></div>
     </a>
     <ul class="nav-links">
       <li><a href="#services">خدماتنا</a></li>
@@ -335,30 +319,41 @@ footer img{border-radius:8px;}
       <li><a href="#stories">قصص النجاح</a></li>
       <li><a href="#market">التسويق</a></li>
       <li><a href="#about">عن المنظمة</a></li>
-      <li><a href="#register" class="nav-btn">سجّل الآن</a></li>
+      <li><a href="#register" class="nav-cta">سجّل الآن</a></li>
     </ul>
+    <button class="burger" id="burger" aria-label="فتح القائمة"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-overlay" id="mob-overlay"></div>
+  <div class="mobile-panel">
+    <div class="mob-header">
+      <img src="Logo.png" height="36" alt="شعار">
+      <button class="mob-close" id="mob-close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <nav class="mob-links">
+      <a href="#services" class="mob-link"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>خدماتنا</a>
+      <a href="#courses" class="mob-link"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>الدورات التدريبية</a>
+      <a href="#consult" class="mob-link"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>الاستشارات المهنية</a>
+      <a href="#stories" class="mob-link"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>قصص النجاح</a>
+      <a href="#market" class="mob-link"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>التسويق الجماعي</a>
+      <a href="#about" class="mob-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>عن المنظمة</a>
+    </nav>
+    <div class="mob-footer"><a href="#register" class="mob-cta mob-link">سجّل مجاناً الآن ←</a></div>
+  </div>
+</div>
+
 <section class="hero">
   <div class="hero-grid"></div>
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
   <div class="particles" id="particles"></div>
   <div class="hero-inner container">
     <div>
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
-        منصة رقمية متكاملة — عطبرة، نهر النيل
-      </div>
+      <div class="hero-badge"><div class="hero-badge-dot"></div>منصة رقمية متكاملة — عطبرة، نهر النيل</div>
       <h1>من الحلم <em>إلى الإنجاز</em><br>رحلة تستحق أن تُروى</h1>
       <p class="hero-desc">منصة خطوة الرقمية تُمكّن الشباب والنازحين في السودان من الوصول إلى الدورات التدريبية المهنية، الاستشارات المتخصصة، التسويق الجماعي لمشاريعهم، وقصص نجاح تُلهم المجتمع.</p>
-      <div class="hero-btns">
-        <a href="#register" class="btn btn-gold">ابدأ رحلتك الآن ←</a>
-        <a href="#courses" class="btn btn-ghost">تصفّح الدورات</a>
-      </div>
+      <div class="hero-btns"><a href="#register" class="btn btn-gold">ابدأ رحلتك الآن ←</a><a href="#courses" class="btn btn-ghost">تصفّح الدورات</a></div>
       <div class="hero-stats">
         <div class="stat-item"><span class="stat-num counter" data-target="500">0</span><span class="stat-lbl">مستفيد مُدرَّب</span></div>
         <div class="stat-item"><span class="stat-num counter" data-target="25">0</span><span class="stat-lbl">دورة تدريبية</span></div>
@@ -366,441 +361,146 @@ footer img{border-radius:8px;}
       </div>
     </div>
     <div class="hero-card">
-      <div class="hero-logo-slot">
-        <img src="Logo.png" width="180" alt="شعار خطوة">
-      </div>
+      <div class="hero-logo-slot"><img src="Logo.png" width="160" alt="شعار خطوة"></div>
       <div class="hero-card-name">منظمة خطوة للتمكين الاقتصادي</div>
       <div class="hero-card-sub">Khotwa for Economic Empowerment</div>
-      <div class="hero-card-loc">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        عطبرة — حي النهضة — ولاية نهر النيل
-      </div>
+      <div class="hero-card-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>عطبرة — حي النهضة — ولاية نهر النيل</div>
       <div class="hero-card-sep"></div>
-      <div class="hero-info-row">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span>الهدف:</span> تمكين الشباب والنازحين اقتصادياً
-      </div>
-      <div class="hero-info-row">
-        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>مدير المشروع:</span> أشرف آدم حسن
-      </div>
-      <div class="hero-info-row">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <span>تأسس:</span> أبريل 2026
-      </div>
+      <div class="hero-info-row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>الهدف:</span>تمكين الشباب والنازحين اقتصادياً</div>
+      <div class="hero-info-row"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>مدير المشروع:</span>أشرف آدم حسن</div>
+      <div class="hero-info-row"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>تأسس:</span>أبريل 2026</div>
     </div>
   </div>
 </section>
 
-<!-- wave -->
-<div class="wave-divider" style="background:var(--navy);"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;"><path fill="#fff" d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z"/></svg></div>
+<div class="wave" style="background:var(--navy);"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" style="height:55px;"><path fill="#fff" d="M0,28 C360,56 1080,0 1440,28 L1440,55 L0,55 Z"/></svg></div>
 
-<!-- ══ SERVICES ══ -->
 <section class="section-white" id="services">
   <div class="container">
-    <div class="sec-head reveal">
-      <div class="sec-tag">خدمات المنصة</div>
-      <h2>كل ما تحتاجه في مكان واحد</h2>
-      <p>منصة متكاملة تجمع التدريب، الاستشارة، التسويق، والدعم لتحويل أفكارك إلى مشاريع ناجحة</p>
-    </div>
+    <div class="sec-head reveal"><div class="sec-tag">خدمات المنصة</div><h2>كل ما تحتاجه في مكان واحد</h2><p>منصة متكاملة تجمع التدريب، الاستشارة، التسويق، والدعم لتحويل أفكارك إلى مشاريع ناجحة</p></div>
     <div class="services-grid">
-      <div class="srv-card reveal" style="transition-delay:.05s">
-        <div class="icon-box">
-          <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <h3>الدورات التدريبية أونلاين</h3>
-        <p>برامج تدريبية مهنية وحرفية عملية تُصمَّم وفق احتياجات سوق العمل المحلي، بإشراف متخصصين معتمدين.</p>
-        <a href="#courses" class="srv-link">استعرض الدورات ←</a>
-      </div>
-      <div class="srv-card reveal" style="transition-delay:.1s">
-        <div class="icon-box">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-        </div>
-        <h3>الاستشارات المهنية</h3>
-        <p>جلسات إرشاد مهني فردية وجماعية في الإدارة، التسويق، دراسات الجدوى، والتخطيط المالي لمشروعك.</p>
-        <a href="#consult" class="srv-link">احجز استشارتك ←</a>
-      </div>
-      <div class="srv-card reveal" style="transition-delay:.15s">
-        <div class="icon-box">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <h3>قصص النجاح</h3>
-        <p>نُسلّط الضوء على رحلات المستفيدين الناجحين لتكون مصدر إلهام ودليلاً عملياً لكل من يبدأ مشواره.</p>
-        <a href="#stories" class="srv-link">اقرأ القصص ←</a>
-      </div>
-      <div class="srv-card reveal" style="transition-delay:.2s">
-        <div class="icon-box">
-          <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        </div>
-        <h3>التسويق الجماعي</h3>
-        <p>منصة لعرض منتجات وخدمات المستفيدين وربطهم بالأسواق المحلية والإقليمية من خلال حملات تسويقية مشتركة.</p>
-        <a href="#market" class="srv-link">عرض المشاريع ←</a>
-      </div>
-      <div class="srv-card reveal" style="transition-delay:.25s">
-        <div class="icon-box">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>شبكة الشراكات</h3>
-        <p>نربطك بالمؤسسات الحكومية، منظمات الدعم، والقطاع الخاص لفرص التوظيف والتمويل الميسّر.</p>
-        <a href="#about" class="srv-link">اعرف أكثر ←</a>
-      </div>
-      <div class="srv-card reveal" style="transition-delay:.3s">
-        <div class="icon-box">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <h3>صندوق التمويل الدوّار</h3>
-        <p>دعم مالي ميسّر للمستفيدين لإطلاق مشاريعهم، مع نظام سداد مرن يُتيح الاستفادة لمستفيدين جدد.</p>
-        <a href="#register" class="srv-link">تقدّم الآن ←</a>
-      </div>
+      <div class="srv-card reveal" style="transition-delay:.04s"><div class="icon-box"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h3>الدورات التدريبية أونلاين</h3><p>برامج تدريبية مهنية وحرفية عملية تُصمَّم وفق احتياجات سوق العمل المحلي، بإشراف متخصصين معتمدين.</p><a href="#courses" class="srv-link">استعرض الدورات ←</a></div>
+      <div class="srv-card reveal" style="transition-delay:.09s"><div class="icon-box"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div><h3>الاستشارات المهنية</h3><p>جلسات إرشاد مهني فردية وجماعية في الإدارة، التسويق، دراسات الجدوى، والتخطيط المالي لمشروعك.</p><a href="#consult" class="srv-link">احجز استشارتك ←</a></div>
+      <div class="srv-card reveal" style="transition-delay:.14s"><div class="icon-box"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>قصص النجاح</h3><p>نُسلّط الضوء على رحلات المستفيدين الناجحين لتكون مصدر إلهام ودليلاً عملياً لكل من يبدأ مشواره.</p><a href="#stories" class="srv-link">اقرأ القصص ←</a></div>
+      <div class="srv-card reveal" style="transition-delay:.19s"><div class="icon-box"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h3>التسويق الجماعي</h3><p>منصة لعرض منتجات وخدمات المستفيدين وربطهم بالأسواق المحلية والإقليمية من خلال حملات تسويقية مشتركة.</p><a href="#market" class="srv-link">عرض المشاريع ←</a></div>
+      <div class="srv-card reveal" style="transition-delay:.24s"><div class="icon-box"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>شبكة الشراكات</h3><p>نربطك بالمؤسسات الحكومية، منظمات الدعم، والقطاع الخاص لفرص التوظيف والتمويل الميسّر.</p><a href="#about" class="srv-link">اعرف أكثر ←</a></div>
+      <div class="srv-card reveal" style="transition-delay:.29s"><div class="icon-box"><svg viewBox="0 0 24 24" stroke="var(--gold)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>صندوق التمويل الدوّار</h3><p>دعم مالي ميسّر للمستفيدين لإطلاق مشاريعهم، مع نظام سداد مرن يُتيح الاستفادة لمستفيدين جدد.</p><a href="#register" class="srv-link">تقدّم الآن ←</a></div>
     </div>
   </div>
 </section>
 
-<!-- wave -->
-<div class="wave-divider" style="background:#fff;"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;"><path fill="var(--cream)" d="M0,0 C480,60 960,0 1440,40 L1440,60 L0,60 Z"/></svg></div>
+<div class="wave" style="background:#fff;"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" style="height:55px;"><path fill="var(--cream)" d="M0,0 C480,55 960,0 1440,40 L1440,55 L0,55 Z"/></svg></div>
 
-<!-- ══ HOW IT WORKS ══ -->
 <section class="section-cream">
   <div class="container">
-    <div class="sec-head reveal">
-      <div class="sec-tag">كيف تعمل المنصة</div>
-      <h2>أربع خطوات نحو التمكين</h2>
-      <p>رحلة واضحة من التسجيل إلى الاستقلالية الاقتصادية الكاملة</p>
-    </div>
+    <div class="sec-head reveal"><div class="sec-tag">كيف تعمل المنصة</div><h2>أربع خطوات نحو التمكين</h2><p>رحلة واضحة من التسجيل إلى الاستقلالية الاقتصادية الكاملة</p></div>
     <div class="steps-wrap">
-      <div class="step-item reveal" style="transition-delay:.05s">
-        <div class="step-num">١</div>
-        <h3>سجّل مجاناً</h3>
-        <p>أنشئ حسابك وأضف معلوماتك ومهاراتك للحصول على توصيات مخصصة.</p>
-      </div>
-      <div class="step-item reveal" style="transition-delay:.15s">
-        <div class="step-num">٢</div>
-        <h3>اختر دورتك</h3>
-        <p>تصفّح البرامج التدريبية واختر ما يناسب مهاراتك وطموحاتك.</p>
-      </div>
-      <div class="step-item reveal" style="transition-delay:.25s">
-        <div class="step-num">٣</div>
-        <h3>أطلق مشروعك</h3>
-        <p>استفد من الاستشارات والتمويل وادعم مشروعك بالتسويق الجماعي.</p>
-      </div>
-      <div class="step-item reveal" style="transition-delay:.35s">
-        <div class="step-num">٤</div>
-        <h3>انضم للشبكة</h3>
-        <p>كن جزءاً من مجتمع الخريجين ودعم الجيل القادم من المستفيدين.</p>
-      </div>
+      <div class="steps-line"></div>
+      <div class="step-item reveal" style="transition-delay:.04s"><div class="step-num">١</div><h3>سجّل مجاناً</h3><p>أنشئ حسابك وأضف معلوماتك ومهاراتك للحصول على توصيات مخصصة.</p></div>
+      <div class="step-item reveal" style="transition-delay:.14s"><div class="step-num">٢</div><h3>اختر دورتك</h3><p>تصفّح البرامج التدريبية واختر ما يناسب مهاراتك وطموحاتك.</p></div>
+      <div class="step-item reveal" style="transition-delay:.24s"><div class="step-num">٣</div><h3>أطلق مشروعك</h3><p>استفد من الاستشارات والتمويل وادعم مشروعك بالتسويق الجماعي.</p></div>
+      <div class="step-item reveal" style="transition-delay:.34s"><div class="step-num">٤</div><h3>انضم للشبكة</h3><p>كن جزءاً من مجتمع الخريجين ودعم الجيل القادم من المستفيدين.</p></div>
     </div>
   </div>
 </section>
 
-<!-- wave -->
-<div class="wave-divider" style="background:var(--cream);"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;"><path fill="#fff" d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z"/></svg></div>
+<div class="wave" style="background:var(--cream);"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" style="height:55px;"><path fill="#fff" d="M0,40 C360,0 1080,55 1440,18 L1440,55 L0,55 Z"/></svg></div>
 
-<!-- ══ COURSES ══ -->
 <section class="section-white" id="courses">
   <div class="container">
-    <div class="sec-head reveal">
-      <div class="sec-tag">الدورات التدريبية</div>
-      <h2>تعلّم مهارة، ابنِ مستقبلك</h2>
-      <p>دورات عملية متخصصة تتوافق مع احتياجات سوق العمل المحلي والإقليمي</p>
-    </div>
-    <div class="tabs reveal">
-      <button class="tab-btn active">الكل</button>
-      <button class="tab-btn">حرف ومهن</button>
-      <button class="tab-btn">تقنية وطاقة</button>
-      <button class="tab-btn">ريادة أعمال</button>
-      <button class="tab-btn">صناعات غذائية</button>
-    </div>
+    <div class="sec-head reveal"><div class="sec-tag">الدورات التدريبية</div><h2>تعلّم مهارة، ابنِ مستقبلك</h2><p>دورات عملية متخصصة تتوافق مع احتياجات سوق العمل المحلي والإقليمي</p></div>
+    <div class="tabs reveal"><button class="tab-btn active">الكل</button><button class="tab-btn">حرف ومهن</button><button class="tab-btn">تقنية وطاقة</button><button class="tab-btn">ريادة أعمال</button><button class="tab-btn">صناعات غذائية</button></div>
     <div class="courses-grid">
-      <!-- Card 1 -->
-      <div class="course-card reveal" style="transition-delay:.05s">
-        <div class="course-thumb c1">
-          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          <span class="course-badge">مجاني</span>
-        </div>
-        <div class="course-body">
-          <div class="course-cat">حرف ومهن</div>
-          <h3>صيانة الأجهزة الكهربائية المنزلية</h3>
-          <p>تعلّم مهارات صيانة الأجهزة العملية وأسّس ورشتك الخاصة.</p>
-          <div class="course-meta">
-            <span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ٦ أسابيع · ٣ أيام/أسبوع</span>
-            <a href="#register" class="btn-enroll">سجّل الآن</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="course-card reveal" style="transition-delay:.1s">
-        <div class="course-thumb c2">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <span class="course-badge">مُميَّز</span>
-        </div>
-        <div class="course-body">
-          <div class="course-cat">تقنية وطاقة</div>
-          <h3>تركيب وصيانة الطاقة الشمسية</h3>
-          <p>مهارة مطلوبة بشدة في السوق المحلي مع فرص تشغيل فورية.</p>
-          <div class="course-meta">
-            <span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ٨ أسابيع · ٤ أيام/أسبوع</span>
-            <a href="#register" class="btn-enroll">سجّل الآن</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="course-card reveal" style="transition-delay:.15s">
-        <div class="course-thumb c3">
-          <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
-          <span class="course-badge">جديد</span>
-        </div>
-        <div class="course-body">
-          <div class="course-cat">صناعات غذائية</div>
-          <h3>تصنيع وتعبئة المنتجات الغذائية</h3>
-          <p>من الإنتاج المنزلي إلى المشروع التجاري المرخّص والمربح.</p>
-          <div class="course-meta">
-            <span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ٤ أسابيع · يومياً</span>
-            <a href="#register" class="btn-enroll">سجّل الآن</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div class="course-card reveal" style="transition-delay:.2s">
-        <div class="course-thumb c4">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          <span class="course-badge">أونلاين</span>
-        </div>
-        <div class="course-body">
-          <div class="course-cat">خدمات رقمية</div>
-          <h3>التسويق الرقمي وإدارة المتاجر الإلكترونية</h3>
-          <p>بيع منتجاتك عبر الإنترنت وأوصل مشروعك لكل مكان.</p>
-          <div class="course-meta">
-            <span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ٥ أسابيع · مرن</span>
-            <a href="#register" class="btn-enroll">سجّل الآن</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 5 -->
-      <div class="course-card reveal" style="transition-delay:.25s">
-        <div class="course-thumb c5">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <span class="course-badge">مجاني</span>
-        </div>
-        <div class="course-body">
-          <div class="course-cat">حرف ومهن</div>
-          <h3>الخياطة والتصميم وإنتاج الملبوسات</h3>
-          <p>خُصِّص للسيدات والشباب لتأسيس ورش خياطة منتجة.</p>
-          <div class="course-meta">
-            <span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ٨ أسابيع · ٣ أيام/أسبوع</span>
-            <a href="#register" class="btn-enroll">سجّل الآن</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 6 -->
-      <div class="course-card reveal" style="transition-delay:.3s">
-        <div class="course-thumb c6">
-          <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          <span class="course-badge">مُميَّز</span>
-        </div>
-        <div class="course-body">
-          <div class="course-cat">ريادة أعمال</div>
-          <h3>أساسيات ريادة الأعمال وإدارة المشاريع الصغيرة</h3>
-          <p>من الفكرة إلى دراسة الجدوى والتخطيط المالي واستدامة المشروع.</p>
-          <div class="course-meta">
-            <span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ٤ أسابيع · مرن</span>
-            <a href="#register" class="btn-enroll">سجّل الآن</a>
-          </div>
-        </div>
-      </div>
+      <div class="course-card reveal" style="transition-delay:.04s"><div class="course-thumb c1"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><span class="course-badge">مجاني</span></div><div class="course-body"><div class="course-cat">حرف ومهن</div><h3>صيانة الأجهزة الكهربائية المنزلية</h3><p>تعلّم مهارات صيانة الأجهزة العملية وأسّس ورشتك الخاصة.</p><div class="course-meta"><span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٦ أسابيع · ٣ أيام</span><a href="#register" class="btn-enroll">سجّل الآن</a></div></div></div>
+      <div class="course-card reveal" style="transition-delay:.09s"><div class="course-thumb c2"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><span class="course-badge">مُميَّز</span></div><div class="course-body"><div class="course-cat">تقنية وطاقة</div><h3>تركيب وصيانة الطاقة الشمسية</h3><p>مهارة مطلوبة بشدة في السوق المحلي مع فرص تشغيل فورية.</p><div class="course-meta"><span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٨ أسابيع · ٤ أيام</span><a href="#register" class="btn-enroll">سجّل الآن</a></div></div></div>
+      <div class="course-card reveal" style="transition-delay:.14s"><div class="course-thumb c3"><svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg><span class="course-badge">جديد</span></div><div class="course-body"><div class="course-cat">صناعات غذائية</div><h3>تصنيع وتعبئة المنتجات الغذائية</h3><p>من الإنتاج المنزلي إلى المشروع التجاري المرخّص والمربح.</p><div class="course-meta"><span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٤ أسابيع · يومياً</span><a href="#register" class="btn-enroll">سجّل الآن</a></div></div></div>
+      <div class="course-card reveal" style="transition-delay:.19s"><div class="course-thumb c4"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="course-badge">أونلاين</span></div><div class="course-body"><div class="course-cat">خدمات رقمية</div><h3>التسويق الرقمي وإدارة المتاجر الإلكترونية</h3><p>بيع منتجاتك عبر الإنترنت وأوصل مشروعك لكل مكان.</p><div class="course-meta"><span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٥ أسابيع · مرن</span><a href="#register" class="btn-enroll">سجّل الآن</a></div></div></div>
+      <div class="course-card reveal" style="transition-delay:.24s"><div class="course-thumb c5"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="course-badge">مجاني</span></div><div class="course-body"><div class="course-cat">حرف ومهن</div><h3>الخياطة والتصميم وإنتاج الملبوسات</h3><p>خُصِّص للسيدات والشباب لتأسيس ورش خياطة منتجة.</p><div class="course-meta"><span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٨ أسابيع · ٣ أيام</span><a href="#register" class="btn-enroll">سجّل الآن</a></div></div></div>
+      <div class="course-card reveal" style="transition-delay:.29s"><div class="course-thumb c6"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span class="course-badge">مُميَّز</span></div><div class="course-body"><div class="course-cat">ريادة أعمال</div><h3>أساسيات ريادة الأعمال وإدارة المشاريع الصغيرة</h3><p>من الفكرة إلى دراسة الجدوى والتخطيط المالي واستدامة المشروع.</p><div class="course-meta"><span class="course-dur"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>٤ أسابيع · مرن</span><a href="#register" class="btn-enroll">سجّل الآن</a></div></div></div>
     </div>
-    <div class="text-center mt-2 reveal">
-      <a href="#register" class="btn btn-gold">عرض كل الدورات (٢٥+) ←</a>
-    </div>
+    <div class="text-center mt-2 reveal"><a href="#register" class="btn btn-gold">عرض كل الدورات (٢٥+) ←</a></div>
   </div>
 </section>
 
-<!-- wave -->
-<div class="wave-divider" style="background:#fff;"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;"><path fill="var(--cream)" d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z"/></svg></div>
+<div class="wave" style="background:#fff;"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" style="height:55px;"><path fill="var(--cream)" d="M0,18 C480,55 960,0 1440,40 L1440,55 L0,55 Z"/></svg></div>
 
-<!-- ══ CONSULT ══ -->
 <section class="section-cream" id="consult">
   <div class="container">
-    <div class="sec-head reveal">
-      <div class="sec-tag">الاستشارات المهنية</div>
-      <h2>خبراؤنا في خدمتك</h2>
-      <p>احجز جلسة استشارية مع متخصصين معتمدين في مجالك</p>
-    </div>
+    <div class="sec-head reveal"><div class="sec-tag">الاستشارات المهنية</div><h2>خبراؤنا في خدمتك</h2><p>احجز جلسة استشارية مع متخصصين معتمدين في مجالك</p></div>
     <div class="consult-wrap">
-      <div class="consult-visual reveal-right">
-        <div class="consult-rings">
-          <div class="c-ring"></div><div class="c-ring"></div><div class="c-ring"></div>
-        </div>
-        <div class="consult-icon-svg">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
+      <div class="consult-visual rev-r">
+        <div class="consult-rings"><div class="c-ring"></div><div class="c-ring"></div><div class="c-ring"></div></div>
+        <div class="consult-icon-svg"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>استشارة مهنية متخصصة</h3>
         <p>نُقدّم خدمات استشارية في الإدارة، التسويق، التخطيط المالي، ودراسات الجدوى لدعم أصحاب المشاريع الناشئة.</p>
         <div class="consult-checks">
-          <div class="consult-check"><div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> دراسات جدوى اقتصادية</div>
-          <div class="consult-check"><div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> خطط تسويقية مخصصة</div>
-          <div class="consult-check"><div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> إرشاد مالي وتخطيط ميزانية</div>
-          <div class="consult-check"><div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> تحضير للمقابلات الوظيفية</div>
+          <div class="cc"><div class="cc-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>دراسات جدوى اقتصادية</div>
+          <div class="cc"><div class="cc-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>خطط تسويقية مخصصة</div>
+          <div class="cc"><div class="cc-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>إرشاد مالي وتخطيط ميزانية</div>
+          <div class="cc"><div class="cc-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>تحضير للمقابلات الوظيفية</div>
         </div>
       </div>
-      <div class="consult-form-area reveal-left">
+      <div class="consult-form-area rev-l">
         <h2>احجز استشارتك الآن</h2>
         <p class="sub">أخبرنا بتخصصك واحتياجاتك وسنوصلك بأنسب خبير</p>
-        <div class="form-row">
-          <div class="form-group"><label>الاسم الكامل *</label><input type="text" placeholder="أحمد محمد علي"></div>
-          <div class="form-group"><label>رقم الهاتف *</label><input type="tel" placeholder="09xxxxxxxx"></div>
-        </div>
-        <div class="form-group">
-          <label>مجال الاستشارة *</label>
-          <select>
-            <option value="">— اختر المجال —</option>
-            <option>إدارة الأعمال والمشاريع</option>
-            <option>التسويق والمبيعات</option>
-            <option>التخطيط المالي والميزانية</option>
-            <option>دراسة الجدوى الاقتصادية</option>
-            <option>التوجيه المهني والتوظيف</option>
-            <option>الحصول على تمويل</option>
-          </select>
-        </div>
-        <div class="form-group"><label>وصف موجز لاحتياجك</label><textarea placeholder="اشرح باختصار ما تحتاجه وما هو وضعك الحالي..."></textarea></div>
+        <div class="form-row"><div class="fg"><label>الاسم الكامل *</label><input type="text" placeholder="أحمد محمد علي"></div><div class="fg"><label>رقم الهاتف *</label><input type="tel" placeholder="09xxxxxxxx"></div></div>
+        <div class="fg"><label>مجال الاستشارة *</label><select><option value="">— اختر المجال —</option><option>إدارة الأعمال والمشاريع</option><option>التسويق والمبيعات</option><option>التخطيط المالي والميزانية</option><option>دراسة الجدوى الاقتصادية</option><option>التوجيه المهني والتوظيف</option><option>الحصول على تمويل</option></select></div>
+        <div class="fg"><label>وصف موجز لاحتياجك</label><textarea placeholder="اشرح باختصار ما تحتاجه وما هو وضعك الحالي..."></textarea></div>
         <button class="btn btn-gold" style="width:100%">إرسال طلب الاستشارة ←</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- wave -->
-<div class="wave-divider" style="background:var(--cream);"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;"><path fill="#fff" d="M0,40 C360,10 1080,60 1440,20 L1440,60 L0,60 Z"/></svg></div>
+<div class="wave" style="background:var(--cream);"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" style="height:55px;"><path fill="#fff" d="M0,40 C360,10 1080,55 1440,22 L1440,55 L0,55 Z"/></svg></div>
 
-<!-- ══ STORIES ══ -->
 <section class="section-white" id="stories">
   <div class="container">
-    <div class="sec-head reveal">
-      <div class="sec-tag">قصص النجاح</div>
-      <h2>من الحلم إلى الإنجاز</h2>
-      <p>مستفيدون حوّلوا التدريب إلى مشاريع ناجحة وحياة مستقرة</p>
-    </div>
+    <div class="sec-head reveal"><div class="sec-tag">قصص النجاح</div><h2>من الحلم إلى الإنجاز</h2><p>مستفيدون حوّلوا التدريب إلى مشاريع ناجحة وحياة مستقرة</p></div>
     <div class="stories-grid">
-      <div class="story-card reveal" style="transition-delay:.05s">
+      <div class="story-card reveal" style="transition-delay:.04s">
         <div class="quote-icon"><svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg></div>
-        <div class="stars">
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <div class="story-result">
-          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          دخل شهري ثابت يتجاوز ٥٠٠ دولار
-        </div>
+        <div class="stars"><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="story-result"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>دخل شهري ثابت يتجاوز ٥٠٠ دولار</div>
         <p class="story-text">بعد النزوح من الخرطوم، التحقت ببرنامج الطاقة الشمسية. اليوم أملك ورشة تركيب وصيانة وأشغّل ثلاثة موظفين من المجتمع. لم أكن أتخيل هذا قبل عام.</p>
-        <div class="story-person">
-          <div class="story-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div><div class="story-name">عمر عبدالله محمد</div><div class="story-role">صاحب ورشة طاقة شمسية — عطبرة</div></div>
-        </div>
+        <div class="story-person"><div class="story-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><div class="story-name">عمر عبدالله محمد</div><div class="story-role">صاحب ورشة طاقة شمسية — عطبرة</div></div></div>
       </div>
       <div class="story-card reveal" style="transition-delay:.12s">
         <div class="quote-icon"><svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg></div>
-        <div class="stars">
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <div class="story-result">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          مشروع مربح منذ الشهر الثالث
-        </div>
+        <div class="stars"><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="story-result"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>مشروع مربح منذ الشهر الثالث</div>
         <p class="story-text">دورة الصناعات الغذائية غيّرت حياتي. بدأت بمنتجات منزلية وبفضل التسويق الجماعي للمنصة أصبحت منتجاتي في ثلاثة محلات بعطبرة والدامر.</p>
-        <div class="story-person">
-          <div class="story-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div><div class="story-name">فاطمة إبراهيم حسن</div><div class="story-role">صاحبة مشروع منتجات غذائية</div></div>
-        </div>
+        <div class="story-person"><div class="story-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><div class="story-name">فاطمة إبراهيم حسن</div><div class="story-role">صاحبة مشروع منتجات غذائية</div></div></div>
       </div>
       <div class="story-card reveal" style="transition-delay:.2s">
         <div class="quote-icon"><svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg></div>
-        <div class="stars">
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <div class="story-result">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-          وظيفة في شركة تقنية إقليمية
-        </div>
+        <div class="stars"><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="story-result"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>وظيفة في شركة تقنية إقليمية</div>
         <p class="story-text">الاستشارة المهنية ساعدتني في تحضير سيرتي الذاتية والاستعداد للمقابلات. في ثلاثة أشهر حصلت على وظيفة بمرتب ثابت ومحترم.</p>
-        <div class="story-person">
-          <div class="story-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div><div class="story-name">أحمد يوسف علي</div><div class="story-role">مبرمج — نازح من الجزيرة</div></div>
-        </div>
+        <div class="story-person"><div class="story-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><div class="story-name">أحمد يوسف علي</div><div class="story-role">مبرمج — نازح من الجزيرة</div></div></div>
       </div>
     </div>
-    <div class="text-center mt-2 reveal">
-      <a href="#register" class="btn btn-gold">شارك قصتك ←</a>
-    </div>
+    <div class="text-center mt-2 reveal"><a href="#register" class="btn btn-gold">شارك قصتك ←</a></div>
   </div>
 </section>
 
-<!-- wave -->
-<div class="wave-divider" style="background:#fff;"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;"><path fill="var(--cream)" d="M0,0 C360,60 1080,0 1440,50 L1440,60 L0,60 Z"/></svg></div>
+<div class="wave" style="background:#fff;"><svg viewBox="0 0 1440 55" preserveAspectRatio="none" style="height:55px;"><path fill="var(--cream)" d="M0,0 C360,55 1080,0 1440,45 L1440,55 L0,55 Z"/></svg></div>
 
-<!-- ══ MARKET ══ -->
 <section class="section-cream" id="market">
   <div class="container">
-    <div class="sec-head reveal">
-      <div class="sec-tag">التسويق الجماعي</div>
-      <h2>اعرض مشروعك للعالم</h2>
-      <p>منصة تسويقية مشتركة تربط مشاريع الشباب والنازحين بالمستهلكين والمستثمرين</p>
-    </div>
+    <div class="sec-head reveal"><div class="sec-tag">التسويق الجماعي</div><h2>اعرض مشروعك للعالم</h2><p>منصة تسويقية مشتركة تربط مشاريع الشباب والنازحين بالمستهلكين والمستثمرين</p></div>
     <div class="market-grid">
-      <div class="market-card reveal" style="transition-delay:.05s">
-        <div class="market-icon-box"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-        <h4>المنتجات الغذائية</h4>
-        <p>حلويات، مخبوزات، مواد غذائية مصنّعة بجودة عالية</p>
-        <div class="market-tag">٢٣ منتج متاح</div>
-      </div>
-      <div class="market-card reveal" style="transition-delay:.1s">
-        <div class="market-icon-box"><svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg></div>
-        <h4>الملبوسات والخياطة</h4>
-        <p>ملابس تقليدية ومعاصرة وأعمال خياطة مخصصة</p>
-        <div class="market-tag">١٥ منتج متاح</div>
-      </div>
-      <div class="market-card reveal" style="transition-delay:.15s">
-        <div class="market-icon-box"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <h4>خدمات الطاقة الشمسية</h4>
-        <p>تركيب، صيانة، وتوريد معدات الطاقة الشمسية</p>
-        <div class="market-tag">٨ مزودي خدمة</div>
-      </div>
-      <div class="market-card reveal" style="transition-delay:.2s">
-        <div class="market-icon-box"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <h4>الحرف اليدوية</h4>
-        <p>منتجات حرفية أصيلة من الجلود والخشب والمعادن</p>
-        <div class="market-tag">١٢ منتج متاح</div>
-      </div>
-      <div class="market-card reveal" style="transition-delay:.25s">
-        <div class="market-icon-box"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <h4>الخدمات الرقمية</h4>
-        <p>تصميم، تسويق رقمي، إدارة مواقع وصفحات</p>
-        <div class="market-tag">٦ مزودي خدمة</div>
-      </div>
-      <div class="market-card reveal" style="transition-delay:.3s">
-        <div class="market-icon-box"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h4>المنتجات الزراعية</h4>
-        <p>منتجات طازجة ومُصنّعة من مزارع محلية صغيرة</p>
-        <div class="market-tag">١٠ منتج متاح</div>
-      </div>
+      <div class="market-card reveal" style="transition-delay:.04s"><div class="mib"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><h4>المنتجات الغذائية</h4><p>حلويات، مخبوزات، مواد غذائية مصنّعة بجودة عالية</p><div class="market-tag">٢٣ منتج متاح</div></div>
+      <div class="market-card reveal" style="transition-delay:.09s"><div class="mib"><svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg></div><h4>الملبوسات والخياطة</h4><p>ملابس تقليدية ومعاصرة وأعمال خياطة مخصصة</p><div class="market-tag">١٥ منتج متاح</div></div>
+      <div class="market-card reveal" style="transition-delay:.14s"><div class="mib"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h4>خدمات الطاقة الشمسية</h4><p>تركيب، صيانة، وتوريد معدات الطاقة الشمسية</p><div class="market-tag">٨ مزودي خدمة</div></div>
+      <div class="market-card reveal" style="transition-delay:.19s"><div class="mib"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h4>الحرف اليدوية</h4><p>منتجات حرفية أصيلة من الجلود والخشب والمعادن</p><div class="market-tag">١٢ منتج متاح</div></div>
+      <div class="market-card reveal" style="transition-delay:.24s"><div class="mib"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h4>الخدمات الرقمية</h4><p>تصميم، تسويق رقمي، إدارة مواقع وصفحات</p><div class="market-tag">٦ مزودي خدمة</div></div>
+      <div class="market-card reveal" style="transition-delay:.29s"><div class="mib"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>المنتجات الزراعية</h4><p>منتجات طازجة ومُصنّعة من مزارع محلية صغيرة</p><div class="market-tag">١٠ منتج متاح</div></div>
     </div>
-    <div class="text-center mt-2 reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="#register" class="btn btn-gold">اعرض منتجك ←</a>
-      <a href="#register" class="btn" style="background:var(--navy);color:#fff;">تصفّح السوق</a>
-    </div>
+    <div class="text-center mt-2 reveal" style="display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;"><a href="#register" class="btn btn-gold">اعرض منتجك ←</a><a href="#register" class="btn" style="background:var(--navy);color:#fff;">تصفّح السوق</a></div>
   </div>
 </section>
 
-<!-- ══ PARTNERS ══ -->
 <div class="partners-bar">
   <h3>شركاؤنا ومموّلونا</h3>
   <div class="partners-logos">
@@ -813,10 +513,9 @@ footer img{border-radius:8px;}
   </div>
 </div>
 
-<!-- ══ ABOUT ══ -->
 <section class="about-strip" id="about">
   <div class="about-inner">
-    <div class="about-text reveal-right">
+    <div class="about-text rev-r">
       <h2>عن منظمة خطوة</h2>
       <p>منظمة خطوة للتمكين الاقتصادي تعمل في مجال التمكين الاقتصادي والتدريب المهني وتنمية قدرات الشباب والنازحين في ولاية نهر النيل — السودان.</p>
       <p>تسعى المنظمة إلى تحويل المستفيدين من متلقّين للمساعدات إلى عناصر منتجة وفاعلة في مجتمعهم من خلال نهج متكامل يجمع التدريب، الدعم، والتشبيك.</p>
@@ -829,160 +528,76 @@ footer img{border-radius:8px;}
         <div class="val-item"><div class="val-dot"></div><div class="val-text">الابتكار والتكيّف</div></div>
       </div>
     </div>
-    <div class="about-logo-area reveal-left">
-      <div class="about-logo-slot">
-        <img src="Logo.png" width="200" alt="شعار خطوة">
-      </div>
+    <div class="about-logo-area rev-l">
+      <div class="about-logo-slot"><img src="Logo.png" width="180" alt="شعار خطوة"></div>
       <div class="about-name">منظمة خطوة للتمكين الاقتصادي</div>
       <div class="about-en">Khotwa for Economic Empowerment Organization</div>
     </div>
   </div>
 </section>
 
-<!-- ══ REGISTER ══ -->
 <section class="register-section" id="register">
   <div class="reg-glow"></div>
   <div class="container">
     <h2 class="reveal">ابدأ رحلتك اليوم</h2>
     <p class="reveal">سجّل الآن واحصل على وصول مجاني للدورات والاستشارات ودعم إطلاق مشروعك</p>
     <div class="register-form reveal">
-      <div class="reg-row">
-        <input type="text" placeholder="اسمك الكامل">
-        <input type="tel" placeholder="رقم هاتفك">
-      </div>
-      <div class="reg-row" style="margin-top:.75rem;">
-        <input type="email" placeholder="بريدك الإلكتروني (اختياري)">
-        <input type="text" placeholder="مجال اهتمامك">
-      </div>
-      <button class="btn btn-gold" style="width:100%;margin-top:.75rem;justify-content:center;font-size:1rem;">سجّل مجاناً والآن ←</button>
+      <div class="reg-row"><input type="text" placeholder="اسمك الكامل"><input type="tel" placeholder="رقم هاتفك"></div>
+      <div class="reg-row"><input type="email" placeholder="بريدك الإلكتروني (اختياري)"><input type="text" placeholder="مجال اهتمامك"></div>
+      <button class="btn btn-gold" style="width:100%;margin-top:.7rem;justify-content:center;font-size:1rem;">سجّل مجاناً والآن ←</button>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="Logo.png" height="60" alt="شعار خطوة">
+        <img src="Logo.png" height="55" alt="شعار خطوة">
         <p class="footer-desc">منصة خطوة الرقمية لتمكين الشباب والنازحين في السودان اقتصادياً من خلال التدريب، الاستشارة، والتسويق الجماعي.</p>
         <div class="footer-social">
-          <a href="#" class="social-btn" title="فيسبوك"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" class="social-btn" title="تويتر X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
-          <a href="#" class="social-btn" title="لينكدإن"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href="#" class="social-btn" title="يوتيوب"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>روابط سريعة</h4>
-        <ul>
-          <li><a href="#services">خدماتنا</a></li>
-          <li><a href="#courses">الدورات</a></li>
-          <li><a href="#consult">الاستشارات</a></li>
-          <li><a href="#stories">قصص النجاح</a></li>
-          <li><a href="#market">سوق المنتجات</a></li>
-          <li><a href="#about">عن المنظمة</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>البرامج</h4>
-        <ul>
-          <li><a href="#">دورات مهنية</a></li>
-          <li><a href="#">تدريب المدربين</a></li>
-          <li><a href="#">احتضان الأعمال</a></li>
-          <li><a href="#">الجمعية التعاونية</a></li>
-          <li><a href="#">صندوق التمويل</a></li>
-          <li><a href="#">شبكة الخريجين</a></li>
-        </ul>
-      </div>
+      <div class="footer-col"><h4>روابط سريعة</h4><ul><li><a href="#services">خدماتنا</a></li><li><a href="#courses">الدورات</a></li><li><a href="#consult">الاستشارات</a></li><li><a href="#stories">قصص النجاح</a></li><li><a href="#market">سوق المنتجات</a></li><li><a href="#about">عن المنظمة</a></li></ul></div>
+      <div class="footer-col"><h4>البرامج</h4><ul><li><a href="#">دورات مهنية</a></li><li><a href="#">تدريب المدربين</a></li><li><a href="#">احتضان الأعمال</a></li><li><a href="#">الجمعية التعاونية</a></li><li><a href="#">صندوق التمويل</a></li><li><a href="#">شبكة الخريجين</a></li></ul></div>
       <div class="footer-col">
         <h4>تواصل معنا</h4>
-        <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          السودان، ولاية نهر النيل، محلية عطبرة، حي النهضة
-        </div>
-        <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 5.59 5.59l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +249 — (يُضاف لاحقاً)
-        </div>
-        <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          البريد الإلكتروني — (يُضاف لاحقاً)
-        </div>
+        <div class="fci"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>السودان، ولاية نهر النيل، محلية عطبرة، حي النهضة</div>
+        <div class="fci"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 5.59 5.59l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+249 — (يُضاف لاحقاً)</div>
+        <div class="fci"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>البريد الإلكتروني — (يُضاف لاحقاً)</div>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 <span class="gold-line">منظمة خطوة للتمكين الاقتصادي</span> — جميع الحقوق محفوظة</p>
-      <div class="footer-bottom-links">
-        <a href="#">سياسة الخصوصية</a>
-        <a href="#">شروط الاستخدام</a>
-        <a href="#">اتصل بنا</a>
-      </div>
+      <div class="fbl"><a href="#">سياسة الخصوصية</a><a href="#">شروط الاستخدام</a><a href="#">اتصل بنا</a></div>
     </div>
   </div>
 </footer>
 
+<button id="btt" aria-label="العودة للأعلى"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+
 <script>
-// ── PARTICLES ──
-(function(){
-  const c=document.getElementById('particles');
-  for(let i=0;i<20;i++){
-    const p=document.createElement('div');
-    p.className='particle';
-    p.style.cssText=`left:${Math.random()*100}%;width:${Math.random()*3+1}px;height:${Math.random()*3+1}px;animation-duration:${Math.random()*10+8}s;animation-delay:${Math.random()*10}s;opacity:${Math.random()*.5+.2}`;
-    c.appendChild(p);
-  }
-})();
-
-// ── NAV SCROLL ──
-window.addEventListener('scroll',()=>{
-  document.getElementById('main-nav').classList.toggle('scrolled',scrollY>50);
-});
-
-// ── SMOOTH SCROLL ──
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',function(e){
-    const t=document.querySelector(this.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
-  });
-});
-
-// ── TABS ──
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
-
-// ── SCROLL REVEAL ──
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:.12});
-document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
-
-// ── COUNTER ANIMATION ──
-function animateCounter(el,target,duration=1800){
-  let start=null;
-  const step=ts=>{
-    if(!start)start=ts;
-    const p=Math.min((ts-start)/duration,1);
-    const ease=1-Math.pow(1-p,3);
-    el.textContent='+'+Math.floor(ease*target);
-    if(p<1)requestAnimationFrame(step);
-    else el.textContent='+'+target;
-  };
-  requestAnimationFrame(step);
-}
-const counterObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting&&!e.target.dataset.done){
-      e.target.dataset.done='1';
-      animateCounter(e.target,+e.target.dataset.target);
-    }
-  });
-},{threshold:.5});
-document.querySelectorAll('.counter').forEach(el=>counterObs.observe(el));
+(()=>{const c=document.getElementById('particles');for(let i=0;i<18;i++){const p=document.createElement('div');p.className='particle';const s=Math.random()*2.5+1;p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;animation-duration:${Math.random()*10+8}s;animation-delay:${Math.random()*12}s;opacity:${Math.random()*.45+.15}`;c.appendChild(p);}})();
+const nav=document.getElementById('main-nav'),btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('scrolled',y>40);btt.classList.toggle('show',y>400);},{passive:true});
+const burger=document.getElementById('burger'),menu=document.getElementById('mobile-menu'),overlay=document.getElementById('mob-overlay'),closeBtn=document.getElementById('mob-close');
+function openMenu(){menu.classList.add('open');burger.classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){menu.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}
+burger.addEventListener('click',()=>menu.classList.contains('open')?closeMenu():openMenu());
+overlay.addEventListener('click',closeMenu);closeBtn.addEventListener('click',closeMenu);
+document.querySelectorAll('.mob-link').forEach(a=>a.addEventListener('click',closeMenu));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
+btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+document.querySelectorAll('.tab-btn').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active');});});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.rev-l,.rev-r').forEach(el=>obs.observe(el));
+function animCounter(el,target,dur=1800){let start=null;const step=ts=>{if(!start)start=ts;const p=Math.min((ts-start)/dur,1);const ease=1-Math.pow(1-p,3);el.textContent='+'+Math.floor(ease*target);if(p<1)requestAnimationFrame(step);else el.textContent='+'+target;};requestAnimationFrame(step);}
+const cobs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.done){e.target.dataset.done='1';animCounter(e.target,+e.target.dataset.target);}});},{threshold:.6});
+document.querySelectorAll('.counter').forEach(el=>cobs.observe(el));
 </script>
 </body>
 </html>
